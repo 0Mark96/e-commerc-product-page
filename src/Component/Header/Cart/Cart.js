@@ -15,7 +15,7 @@ const Cart = () => {
     
     useEffect(() => {
       const closeModal = (e) => {
-        if (e.target.closest(`.${outer_wrapper},.Remove_remove_btn__0soE4,.AddToCart_add_btn__WGqGi`)) {
+        if (e.target.closest(`.${outer_wrapper},button`)) {
           return
         }
         setIsCartOpen(false)
