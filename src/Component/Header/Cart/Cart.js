@@ -15,10 +15,9 @@ const Cart = () => {
     
     useEffect(() => {
       const closeModal = (e) => {
-        if (e.target.closest(`.${outer_wrapper}`)) {
-          return
+        if (!e.target.closest(`.${outer_wrapper}`)) {
+          setIsCartOpen(false)
         }
-        setIsCartOpen(false)
       }
       document.addEventListener('click', closeModal)
       
