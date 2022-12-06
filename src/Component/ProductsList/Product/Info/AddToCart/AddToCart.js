@@ -1,4 +1,4 @@
-import style from './AddToCart.module.scss'
+import './AddToCart.scss'
 import cartIcon from '../../../../../assets/images/icon-minicart.svg'
 import { useContext } from "react"
 import { CartContext, CartSetterContext } from "../../../../../Contextprovider/ContextProvider"
@@ -6,7 +6,6 @@ import { CartContext, CartSetterContext } from "../../../../../Contextprovider/C
 
 
 const AddToCart = ({product,quantity}) => {
-    const {add_btn} = style
     const {id,title,price,thumbnail} = product
 
     const cart = useContext(CartContext)
@@ -29,7 +28,7 @@ const AddToCart = ({product,quantity}) => {
     }
 
   return (
-    <button onClick={addToCart} className={add_btn}>
+    <button onClick={addToCart} className='add_btn'>
        <img  src={cartIcon} alt='cart img'/>
        Add to cart
     </button>
