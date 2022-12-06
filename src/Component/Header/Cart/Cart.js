@@ -15,19 +15,18 @@ const Cart = () => {
     
     useEffect(() => {
       const closeModal = (e) => {
-        if (!e.target.closest(`.${outer_wrapper}`)) {
+        if (!e.target.closest('.cartwrapper')) {
           setIsCartOpen(false)
         }
       }
       document.addEventListener('click', closeModal)
-      
       return () => {      
         document.removeEventListener('click', closeModal)
       }
     }, [outer_wrapper])
 
   return (
-    <div className={outer_wrapper}>
+    <div className={`${outer_wrapper} cartwrapper`}>
         <button className={btn_open_cart} onClick={()=>setIsCartOpen(prev => !prev)}>
           <img src={iconCart} alt='open cart'/><span className={length}>{cart.length}</span>
         </button> 
@@ -41,7 +40,7 @@ const Cart = () => {
             </ul>
             {cart.length > 0 && <button className={check_btn}>Checkout</button>}
         </div>
-    </div> 
+    </div>
   )
 }
 
