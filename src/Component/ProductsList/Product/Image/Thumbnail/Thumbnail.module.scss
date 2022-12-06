@@ -1,0 +1,30 @@
+@import '../../../../../common/variable';
+
+
+.thumbnail_wrapper{
+    width: 100%;
+    margin-top: 35px;
+    display: inline-flex;
+    justify-content: space-between;
+    .img_wrapper{
+        width: 20%;
+        height: max-content;
+        background-color: $White;
+        border-radius: 10px;
+        ._thumbnail{
+            display: block;
+            width: 100%;
+            border-radius: 10px;
+                &:hover{
+                    opacity: 0.5;
+                }
+        }
+    }
+    .img_wrapper_selected{
+        border: 3px solid $Orange;
+        border-radius: 13px;
+        ._thumbnail{
+            opacity: 0.5;
+        }
+    }
+}

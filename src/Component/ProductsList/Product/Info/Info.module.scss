@@ -1,0 +1,76 @@
+@import '../../../../common/variable';
+
+.info_wrapper{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding:15px;
+    .company_name{
+        color: $Orange;
+        font-weight: 700;
+        font-size: 14px;
+    }
+    .title_style{
+        color:$Black;
+        margin-top: 15px;
+        line-height: 1;
+    }
+    .descrip{
+        color: $DarkGrayishBlue;
+        margin-top: 20px;
+    }
+    .prices{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        .discount{
+            color: $Orange;
+            background-color: $PaleOrange;
+            border-radius: 5px;
+            padding: 5px;
+            margin-left: 25px;
+        }
+        .original_price{
+            color: $GrayishBlue;
+            margin-left: auto;
+            text-decoration: line-through;
+        }
+    }
+    .buttons_wrapper{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width:768px){
+    .info_wrapper{
+        width: 45%;
+        height: auto;
+        padding: 0px 20px;
+        .title_style{
+            font-size: 40px;
+        }
+        .descrip{
+            margin-top: 30px;
+        }
+        .prices{
+            margin-top: 25px;
+            position: relative;
+            .original_price{
+                position: absolute;
+                bottom: 0;
+                transform: translateY(120%);
+            }
+        }
+        .buttons_wrapper{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 40px;
+        }
+    }    
+}

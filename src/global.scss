@@ -1,0 +1,55 @@
+@import './common/variable';
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: $White;
+    max-width: 100vw;
+    overflow-x: hidden;
+    max-width: 1800px;
+    margin: 0 auto;
+    p{
+        font-size: 16px;
+    }
+    button, a{
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        -webkit-tap-highlight-color: transparent;
+        font-family: 'Kumbh Sans', sans-serif;
+    }
+    a{
+        text-decoration: none;
+    }
+    li{
+        list-style: none;
+    }
+    h1{
+        font-size: 30px;
+    }
+    h2{
+        font-size: 17px;
+    }
+}
+.icon-close{
+    fill:$White;
+    &:hover{
+        fill:$Orange;
+    }
+}
+@media screen and (min-width:768px){
+    .App{
+        padding: 0px 20px;
+    }
+}
+
+@media screen and (min-width:992px){
+    .App{
+        padding: 0px 150px;
+    }
+}

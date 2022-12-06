@@ -1,0 +1,19 @@
+@import '../../../common/variable';
+
+.img_wrapper{
+    width:25px;
+    height: 25px;
+    img{
+        width: 100%;
+    }
+}
+@media  screen and (min-width:768px) {
+    .img_wrapper{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        &:hover{
+            border: 2px solid $Orange;
+        }
+    }
+}

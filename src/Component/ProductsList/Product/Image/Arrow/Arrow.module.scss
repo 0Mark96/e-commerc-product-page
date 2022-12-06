@@ -1,0 +1,35 @@
+@import '../../../../../common/variable';
+
+.arrow_wrapper{
+    position: absolute;
+    top:50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 0px 15px;
+    button{
+        width:40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $White;
+        border-radius: 50%;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .arrow_wrapper{
+        padding: 0;
+        button{
+            &:first-of-type{
+                transform: translateX(-50%);
+            }
+            width: 45px;
+            height: 45px;
+            transform: translateX(50%);
+        }
+    }
+}

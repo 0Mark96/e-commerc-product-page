@@ -1,0 +1,24 @@
+.slider_wrapper{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+    .product_img{
+        width: 100%;
+        height: 100%;
+        display: none;
+        z-index:0;
+    }
+    .img_selected{
+        display: inherit;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .slider_wrapper{
+        width: 100%;
+        .product_img{
+            border-radius: 20px;
+        }
+    }
+}

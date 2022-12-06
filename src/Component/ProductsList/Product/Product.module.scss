@@ -1,0 +1,13 @@
+.product_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+@media screen and (min-width:768px){
+    .product_wrapper{
+        flex-direction: row;
+        padding: 60px 40px;
+    }
+}
