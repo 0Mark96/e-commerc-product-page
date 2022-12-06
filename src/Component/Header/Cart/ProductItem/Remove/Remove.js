@@ -13,7 +13,7 @@ const Remove = ({id}) => {
        dispatch({type: 'REMOVE_PRODUCT', productId:id})
     }
   return (
-    <button onClick={()=>removeProduct(id)} className='remove_btn'><img src={deleteImg} alt='delete'/></button>
+    <button onClick={()=>removeProduct(id)} className='remove-btn'><img src={deleteImg} alt='delete'/></button>
   )
 }
 
