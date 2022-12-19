@@ -1,15 +1,14 @@
 import style from './ProductsList.module.scss'
+import { productsData } from './dataProducts'
 //component
 import Product from './Product/Product'
-//context
-import { useContext } from "react"
-import { ProductsContext } from "../../Contextprovider/ContextProvider"
+
+
 
 
 const ProductsList = () => {
     const {products_list} = style
 
-    const productsData = useContext(ProductsContext)
     
   return (
     <main className={products_list}>

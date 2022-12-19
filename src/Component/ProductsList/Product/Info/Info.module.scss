@@ -25,17 +25,23 @@
         width: 100%;
         display: inline-flex;
         align-items: center;
+        font-weight: 700;
+        .price_style{
+            font-size: 30px;
+        }
         .discount{
             color: $Orange;
             background-color: $PaleOrange;
             border-radius: 5px;
             padding: 5px;
             margin-left: 25px;
+            font-size: 17px;
         }
         .original_price{
             color: $GrayishBlue;
             margin-left: auto;
             text-decoration: line-through;
+            font-size: 17px;
         }
     }
     .buttons_wrapper{

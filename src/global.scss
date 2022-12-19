@@ -36,10 +36,18 @@ body{
         font-size: 17px;
     }
 }
+
+// svg icon style
 .icon-close{
     fill:$White;
     &:hover{
         fill:$Orange;
+    }
+}
+.icon-next,.icon-previous{
+    stroke:#1D2026;
+    &:hover{
+        stroke:$Orange;
     }
 }
 @media screen and (min-width:768px){

@@ -12,7 +12,7 @@ const Cart = () => {
     const [isCartOpen,setIsCartOpen] = useState(false)
 
     const cart = useContext(CartContext)
-    
+
     useEffect(() => {
       const closeModal = (e) => {
         if (!e.target.closest('.cartwrapper,.remove-btn')) {
@@ -25,20 +25,22 @@ const Cart = () => {
       }
     }, [outer_wrapper])
 
+
   return (
     <div className={`${outer_wrapper} cartwrapper`}>
         <button className={btn_open_cart} onClick={()=>setIsCartOpen(prev => !prev)}>
-          <img src={iconCart} alt='open cart'/><span className={length}>{cart.length}</span>
+          <img src={iconCart} alt='open cart'/>
+          {cart.numOfProducts > 0 && <span className={length}>{cart.numOfProducts}</span>}
         </button> 
     
         <div className={classnames(cart_container,{[open_cart]:isCartOpen})}>
             <p className={cart_title}>Cart</p>
             <ul className={prodList_container}>
-                {cart.length > 0 ? cart.map((prod)=><ProductItem prod={prod} key={prod.id}/>) :
+                {cart.products.length > 0 ? cart.products.map((prod)=><ProductItem prod={prod} key={prod.id}/>) :
                  <p className={empty_p}>Your cart is empty</p>
                 }
             </ul>
-            {cart.length > 0 && <button className={check_btn}>Checkout</button>}
+            {cart.products.length > 0 && <button className={check_btn}>Checkout</button>}
         </div>
     </div>
   )

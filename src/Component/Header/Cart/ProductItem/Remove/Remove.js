@@ -6,11 +6,11 @@ import { useContext } from 'react'
 
 
 
-const Remove = ({id}) => {
+const Remove = ({id,quantity}) => {
     const dispatch = useContext(CartSetterContext)
 
     const removeProduct = (id) => {
-       dispatch({type: 'REMOVE_PRODUCT', productId:id})
+       dispatch({type: 'REMOVE_PRODUCT', productId:id, quantity:quantity})
     }
   return (
     <button onClick={()=>removeProduct(id)} className='remove-btn'><img src={deleteImg} alt='delete'/></button>

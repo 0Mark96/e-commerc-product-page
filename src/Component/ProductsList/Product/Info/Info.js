@@ -4,18 +4,21 @@ import { useReducer } from 'react'
 import Quantity from './Quantity/Quantity'
 import AddToCart from './AddToCart/AddToCart'
 
-const initialState = 0
+const initialState = {count:0}
 const quantityReducer = (state, action) => {
     switch (action.type) {
-    
+     
       case 'INCREASE':
-      return state + 1
+      return {count: state.count + 1}
 
       case 'DECREASE':
-      return state === 0 ? state : state -1
+      return {count: state.count > 0 ? state.count - 1 : state.count}
       
+      case 'SET_INPUT_VALUE':
+          return {count: action.value ? action.value : 0}
+        
       default:
-      return state
+      return state 
     }
     };
 
@@ -31,13 +34,13 @@ const Info = ({product}) => {
         <h1 className={title_style}>{title}</h1>
         <p className={descrip}>{description}</p>
         <div className={prices}>
-            <h1 className={price_style}>${price}</h1>
-            <h2 className={discount}>{discountPercentage}</h2>
-            <h2 className={original_price}>{originalPrice}</h2>
+            <span className={price_style}>${price}</span>
+            <span className={discount}>{discountPercentage}</span>
+            <span className={original_price}>{originalPrice}</span>
         </div>
         <div className={buttons_wrapper}>
-        <Quantity quantity={quantity} dispatch={dispatch}/>
-        <AddToCart product={product} quantity={quantity}/>
+        <Quantity quantity={quantity.count} dispatch={dispatch}/>
+        <AddToCart product={product} quantity={quantity.count}/>
         </div>
     </div>
   )

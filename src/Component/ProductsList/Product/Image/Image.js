@@ -15,15 +15,20 @@ const sliderReducer = (state, action) => {
     case 'NEXT':
     return state.selectedId < action.imgLength ? {
       ...state,
-      selectedId:state.selectedId + 1
-    } : state
+      selectedId: state.selectedId + 1
+    } : {
+       ...state,
+       selectedId:1
+    }
 
     case 'PREVIOUS':
     return state.selectedId > 1 ? {
       ...state,
       selectedId:state.selectedId - 1
-    } : state
-    
+    } : {
+      ...state,
+      selectedId: action.imgLength 
+      }
     case 'CHANGE_FROM_THUMBNAIL':
     return {
       ...state,
@@ -53,7 +58,6 @@ const Images = ({product}) => {
     
     //control slider behavour
     const [{openModal,selectedId}, dispatch] = useReducer(sliderReducer,initialstate)
-    
     // detect screenSize
     const [isMobile,setIsMobile]=useState(window.innerWidth)
     useEffect(()=>{
