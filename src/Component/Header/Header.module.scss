@@ -10,7 +10,7 @@
 
 @media screen and (min-width:768px){
     .header{
-        box-shadow: 0px 1px $GrayishBlue;
+        border-bottom: 1px solid $GrayishBlue;
         padding: 40px 0px 45px 0px;
     }
 }

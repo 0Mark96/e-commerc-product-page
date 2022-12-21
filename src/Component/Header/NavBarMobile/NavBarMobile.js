@@ -1,5 +1,5 @@
 import style from './NavBarMobile.module.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import classnames from 'classnames'
 import hamburgher from '../../../assets/images/icon-menu.svg'
 import close_icon from '../../../assets/images/icon-close.svg'
@@ -14,6 +14,14 @@ const NavBarMobile = () => {
     const toggleNavBar = ()=>{
         setIsNavBarOpen(!isNavBarOpen)
     }
+    
+    useEffect(()=>{
+      if(isNavBarOpen){
+        document.body.style.overflow = 'hidden'
+      }else{
+        document.body.style.overflow = 'scroll'
+      }
+    },[isNavBarOpen])
 
   return (
     <>

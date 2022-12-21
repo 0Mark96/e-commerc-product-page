@@ -17,6 +17,16 @@
         justify-content: center;
         background-color: $White;
         border-radius: 50%;
+        stroke: #1D2026;
+        &:hover{
+            stroke: $Orange;
+        }
+        svg{
+            &:first-child{
+                margin-right: 5px;
+            }
+            margin-left: 5px;
+        }
     }
 }
 
